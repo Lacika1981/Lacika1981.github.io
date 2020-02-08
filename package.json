@@ -1,0 +1,30 @@
+{
+  "name": "resume-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Lacika1981/resume-project.git"
+  },
+  "author": "Laszlo Varga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lacika1981/resume-project/issues"
+  },
+  "homepage": "https://github.com/Lacika1981/resume-project#readme",
+  "dependencies": {
+    "concurrent-transform": "^1.0.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-pipes": "^0.1.7",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "imagemin-webp": "^5.1.0",
+    "only": "0.0.2",
+    "os": "^0.1.1"
+  }
+}
