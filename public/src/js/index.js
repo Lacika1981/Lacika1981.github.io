@@ -1,18 +1,52 @@
 var windowWidth = $(window).width();
+var windowHeight = $(window).height();
+
+function animateMenuElems() {
+  var split = new SplitText('ul li', { type: 'words, chars' });
+  return {
+    shakeWordsIn: function() {
+      TweenMax.staggerFromTo(
+        split.words,
+        0.5,
+        { y: windowHeight * -1 },
+        {
+          y: 0,
+          delay: 0.33,
+        },
+        0.02
+      );
+    },
+    shakeWordsOut: function() {
+      TweenMax.staggerFromTo(
+        split.words,
+        0.5,
+        { y: 0 },
+        {
+          y: windowHeight,
+        },
+        0
+      );
+    },
+  };
+}
 
 function menuControll() {
+  var menuAnim = animateMenuElems();
   return {
     openMenu: function() {
       TweenMax.to('.wrapper', 0.33, {
         x: windowWidth,
         onStart: function() {
           $('body').addClass('open-menu');
+          menuAnim.shakeWordsIn();
         },
       });
     },
     closeMenu: function() {
+      menuAnim.shakeWordsOut();
       TweenMax.to('.wrapper', 0.33, {
         x: 0,
+        delay: 0.5,
         onStart: function() {
           $('body').removeClass('open-menu');
         },
@@ -111,9 +145,11 @@ function scrambleText() {
  */
 
 function drawSkills() {
-  Object.keys(skills).forEach(function(skill) {
+  Object.keys(skills).forEach(function(skill, index) {
     var title = $('<h3 />', { class: 'title white' });
-    var abilityContainer = $('<div />', { class: 'ability-container flex' });
+    var abilityContainer = $('<div />', {
+      class: 'ability-container flex',
+    });
     var abilityBarContainer = $('<div />', {
       class: 'ability-bar-container flex flex-justify-left flex-align-center',
     });
@@ -167,4 +203,9 @@ $(function() {
       tl.pause();
     },
   });
+});
+
+var scroll = new LocomotiveScroll({
+  el: document.querySelector('#js-scroll'),
+  smooth: true,
 });
