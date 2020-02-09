@@ -36,7 +36,7 @@ var resizeImageTasks = [];
          upscale: false
        }))
       .pipe(pipes.image.optimize())
-      .pipe(gulp.dest('./public/Assets/images/dest/' + size + '/'))
+      .pipe(gulp.dest('./public/Assets/images/dest/'))
   });
   resizeImageTasks.push(resizeImageTask);
 });
