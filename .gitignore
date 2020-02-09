@@ -1,0 +1,3 @@
+node_modules
+public/Assets/images/src
+public/dest/css/*.css.map
