@@ -4,13 +4,19 @@
 
 html,
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .flex {
   display: flex;
   &-center {
     justify-content: center;
+    align-items: center;
+  }
+  &-justify-left {
+    justify-content: flex-start;
+  }
+  &-align-center {
     align-items: center;
   }
 }
@@ -68,7 +74,7 @@ section {
 /* nav */
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -87,6 +93,7 @@ section {
 /* sections */
 
 .section {
+  width: 100%;
   &.introduction {
     height: 100vh;
     background-image: url('/Assets/images/src/laszlo_varga.jpg');
@@ -127,6 +134,21 @@ section {
       font-size: 3rem;
       color: #fff;
     }
+  }
+  &.skill {
+    height: 100vh;
+  }
+}
+
+.ability-container {
+  .title {
+    flex-basis: 30%;
+  }
+  .ability-bar-container {
+    flex-basis: 70%;
+  }
+  .ability-bar {
+    height: 5px;
   }
 }
 

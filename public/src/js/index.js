@@ -1,10 +1,10 @@
-var windowHeight = $(window).height();
+var windowWidth = $(window).width();
 
 function menuControll() {
   return {
     openMenu: function() {
       TweenMax.to('.wrapper', 0.33, {
-        y: windowHeight,
+        x: windowWidth,
         onStart: function() {
           $('body').addClass('open-menu');
         },
@@ -12,7 +12,7 @@ function menuControll() {
     },
     closeMenu: function() {
       TweenMax.to('.wrapper', 0.33, {
-        y: 0,
+        x: 0,
         onStart: function() {
           $('body').removeClass('open-menu');
         },
@@ -105,6 +105,41 @@ function scrambleText() {
 }
 
 /* end of scrambleText functions */
+
+/**
+ * @function drawSkills
+ */
+
+function drawSkills() {
+  Object.keys(skills).forEach(function(skill) {
+    var title = $('<h2 />', { class: 'title' });
+    var abilityContainer = $('<div />', { class: 'ability-container flex' });
+    var abilityBarContainer = $('<div />', {
+      class: 'ability-bar-container flex flex-justify-left flex-align-center',
+    });
+    var abilityBar = $('<span />', { class: 'ability-bar' });
+    title.text(skill);
+    abilityContainer.append(title);
+    abilityContainer.append(abilityBarContainer);
+    abilityBarContainer.append(abilityBar);
+    $('.skill-wrapper').append(abilityContainer);
+    var barWidth = abilityBarContainer.width();
+    console.log(barWidth);
+    TweenMax.to(abilityBar, 1, {
+      width: skills[skill] + '%',
+      background:
+        'linear-gradient(to right, red 0%, orange ' +
+        barWidth * 0.5 +
+        'px, green ' +
+        barWidth +
+        'px, white ' +
+        barWidth +
+        'px, white 100%)',
+    });
+  });
+}
+
+/* enf of drawSkills function */
 
 $(function() {
   var tl = new TimelineMax();
