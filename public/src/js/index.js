@@ -112,25 +112,25 @@ function scrambleText() {
 
 function drawSkills() {
   Object.keys(skills).forEach(function(skill) {
-    var title = $('<h2 />', { class: 'title' });
+    var title = $('<h3 />', { class: 'title white' });
     var abilityContainer = $('<div />', { class: 'ability-container flex' });
     var abilityBarContainer = $('<div />', {
       class: 'ability-bar-container flex flex-justify-left flex-align-center',
     });
     var abilityBar = $('<span />', { class: 'ability-bar' });
-    title.text(skill);
+    title.text(skills[skill]['title']);
     abilityContainer.append(title);
     abilityContainer.append(abilityBarContainer);
     abilityBarContainer.append(abilityBar);
-    $('.skill-wrapper').append(abilityContainer);
+    $('.skill-wrapper--inner').append(abilityContainer);
     var barWidth = abilityBarContainer.width();
     console.log(barWidth);
     TweenMax.to(abilityBar, 1, {
-      width: skills[skill] + '%',
+      width: skills[skill]['ability'] + '%',
       background:
-        'linear-gradient(to right, red 0%, orange ' +
+        'linear-gradient(to right, #d53535 0%, #e6c058 ' +
         barWidth * 0.5 +
-        'px, green ' +
+        'px, #2cd04b ' +
         barWidth +
         'px, white ' +
         barWidth +
@@ -138,6 +138,8 @@ function drawSkills() {
     });
   });
 }
+
+drawSkills();
 
 /* enf of drawSkills function */
 

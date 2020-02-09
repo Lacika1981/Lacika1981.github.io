@@ -1,5 +1,15 @@
 var skills = {
-  html: '30',
-  css: '90',
-  javascript: '100',
+  html: { title: 'HTML', ability: '90' },
+  css: { title: 'CSS', ability: '90' },
+  sass: { title: 'SASS', ability: '75' },
+  rwd: { title: 'Responsive Web Design', ability: '90' },
+  javascript: { title: 'JavaScript', ability: '90' },
+  jquery: { title: 'jQuery', ability: '85' },
+  react: { title: 'ReactJS', ability: '40' },
+  gsap: { title: 'GSAP', ability: '80' },
+  bootstrap: { title: 'Bootstrap', ability: '85' },
+  wordpress: { title: 'WordPress', ability: '80' },
+  aws: { title: 'AWS', ability: '30' },
+  git: { title: 'Git', ability: '85' },
+  katalon: { title: 'Katalon Studio', ability: '70' },
 };
