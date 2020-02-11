@@ -1,6 +1,8 @@
 var windowWidth = $(window).width();
 var windowHeight = $(window).height();
 
+function followImageMouse() {}
+
 function animateMenuElems() {
   var split = new SplitText('ul li', { type: 'words, chars' });
   return {
