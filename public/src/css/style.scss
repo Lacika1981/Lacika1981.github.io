@@ -223,7 +223,6 @@ h2 {
   background-color: #fff;
   &-container {
     flex-direction: column;
-    flex-basis: calc(50% - 20px);
     margin-bottom: 40px;
   }
   &--title {
@@ -360,6 +359,11 @@ h2 {
     }
     .date-range {
       padding-right: 0;
+    }
+  }
+  .portfolio {
+    &-container {
+      flex-basis: calc(50% - 20px);
     }
   }
   .footer {
