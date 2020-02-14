@@ -3,6 +3,8 @@ import { addToDB } from './idb-db.js';
 var todoApp = function todoApp() {
   var publicMethods = {
     logState,
+    cretaeuid,
+    createElems,
   };
 
   var state = {
@@ -32,7 +34,7 @@ var todoApp = function todoApp() {
 
   function addMethod() {
     addButton.addEventListener('click', createElems);
-    addButton.addEventListener('click', addToDB);
+    // addButton.addEventListener('click', addToDB);
   }
 
   function cretaeuid() {
@@ -229,4 +231,4 @@ var todoApp = function todoApp() {
   return publicMethods;
 };
 
-todoApp();
+export default todoApp();
