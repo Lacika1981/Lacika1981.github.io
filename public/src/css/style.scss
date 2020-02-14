@@ -8,6 +8,31 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+body {
+  &.open-menu {
+    nav {
+      z-index: 8;
+    }
+    .header {
+      span {
+        &:first-child {
+          transform: translateY(4px) rotate(45deg);
+        }
+        &:last-child {
+          transform: translateY(-4px) rotate(-45deg);
+        }
+      }
+    }
+  }
+  &.user-is-tabbing {
+    button {
+      &:active {
+        outline: 1px solid lightblue;
+      }
+    }
+  }
+}
+
 img {
   max-width: 100%;
 }
@@ -74,6 +99,7 @@ section:not(.wrapper) {
       width: 100%;
       height: 2px;
       background-color: rgba(121, 121, 121, 1);
+      transition: transform 0.5s;
       &:last-of-type {
         margin-top: auto;
       }
@@ -98,6 +124,39 @@ section:not(.wrapper) {
   li:not(:last-of-type) {
     margin-bottom: 15px;
   }
+  button {
+    position: relative;
+    font-size: 2rem;
+    border-bottom: 0;
+    transition: border-bottom 0.25s;
+    outline: none;
+    cursor: pointer;
+    & > div {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background-color: black;
+        transition: width 0.5s;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+      &:active {
+        &::after {
+          width: 0%;
+        }
+      }
+      div {
+        pointer-events: none;
+      }
+    }
+  }
 }
 
 /* end of nav */
@@ -114,22 +173,32 @@ section:not(.wrapper) {
     }
   }
   &.introduction {
+    position: relative;
     height: calc(100vh - 100px);
     margin-top: 100px;
-    background-image: url('/public/Assets/images/src/laszlo_varga.jpg');
+    background-image: url('../../Assets/images/src/laszlo_varga.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(40, 255, 40, 0.3);
+    }
     .float,
     .scramble {
       p {
         font-size: 2rem;
         color: #fff;
+        filter: drop-shadow(2px 4px 6px black);
       }
     }
     .float {
       display: none;
       opacity: 0;
+      filter: drop-shadow(2px 4px 6px black);
       p {
         position: relative;
         text-align: center;
@@ -141,6 +210,29 @@ section:not(.wrapper) {
         }
       }
     }
+    .end-of-intro {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      color: white;
+      margin: auto;
+    }
+    .scroll-container {
+      color: white;
+      margin: auto;
+      padding: 40px;
+      border: 1px solid white;
+      z-index: 9;
+      cursor: pointer;
+    }
   }
   &.preloader {
     position: absolute;
@@ -149,7 +241,7 @@ section:not(.wrapper) {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 1);
-    z-index: 9;
+    z-index: 8;
     p {
       width: 100%;
       font-size: 3rem;
@@ -198,6 +290,7 @@ h2 {
   background-color: lightseagreen;
   margin: 10px 0;
   padding-left: 10px;
+  transition: background-color 0.3s;
   .ability-bar-container {
     flex-basis: 70%;
     display: none;
@@ -205,6 +298,9 @@ h2 {
   .ability-bar {
     height: 8px;
     border-radius: 5px;
+  }
+  &:hover {
+    background-color: rgb(40, 90, 90);
   }
 }
 
@@ -311,6 +407,7 @@ h2 {
       background-size: 50%;
       background-position: right;
       background-color: #fff;
+      background-image: none;
       .float,
       .scramble {
         p {
@@ -333,12 +430,6 @@ h2 {
     .ability-container {
       flex-basis: calc(50% - 20px);
       margin: 10px;
-      &:nth-child(3n + 0) {
-        margin-right: 0;
-      }
-      &:nth-child(3n - 2) {
-        margin-left: 0;
-      }
       &:last-child {
         margin: 10px 0;
       }
@@ -384,6 +475,16 @@ h2 {
   .skill-wrapper {
     .ability-container {
       flex-basis: calc(33.3333333% - 14px);
+    }
+  }
+  .skill-wrapper {
+    .ability-container {
+      &:nth-child(3n + 0) {
+        margin-right: 0;
+      }
+      &:nth-child(3n - 2) {
+        margin-left: 0;
+      }
     }
   }
 }

@@ -59,11 +59,36 @@ function menuControll() {
 
 var toggleMenu = $('.header--right');
 var menuController = menuControll();
+var menuLink = $('nav button');
+var scrollElem = $('.scroll-container');
 
 toggleMenu.click(function() {
   !$('body').hasClass('open-menu')
     ? menuController.openMenu()
     : menuController.closeMenu();
+});
+
+menuLink.click(function(e) {
+  menuController.closeMenu();
+  var a = $(e.target)[0].parentNode.dataset.toscroll;
+  console.log(a);
+  TweenMax.to(window, 1, {
+    scrollTo: {
+      y: '#' + a,
+      offsetY: 100,
+    },
+    delay: 1,
+  });
+});
+
+scrollElem.click(function() {
+  console.log('called scroll');
+  TweenMax.to(window, 1, {
+    scrollTo: {
+      y: '#skill',
+      offsetY: 100,
+    },
+  });
 });
 
 /**
@@ -98,11 +123,42 @@ function createParagraphs() {
 }
 
 function animateSkills() {
-  TweenMax.to($('.float p:first-child'), 0.33, {
+  var split = new SplitText('.float p', { type: 'chars' });
+  var tl = new TimelineMax();
+  tl.to($('.float p:first-child'), 0.33, {
     left: 0,
   });
-  TweenMax.to($('.float p:last-child'), 0.33, {
+  tl.to($('.float p:last-child'), 0.33, {
     right: 0,
+  });
+  tl.staggerFromTo(
+    split.chars,
+    0.5,
+    { y: windowHeight * -1 },
+    {
+      y: 0,
+      delay: 0.33,
+    },
+    0.02
+  );
+  tl.staggerFromTo(
+    split.chars,
+    0.5,
+    { x: 0 },
+    {
+      x: windowWidth * 1,
+      delay: 0.33,
+      onComplete: function() {
+        $('.scramble').addClass('hide');
+        TweenMax.set(this.target, {
+          display: 'none',
+        });
+      },
+    },
+    0.02
+  );
+  tl.to('.end-of-intro', 0.5, {
+    opacity: 1,
   });
 }
 
@@ -113,6 +169,19 @@ function showMainSkills() {
     opacity: 1,
   });
   animateSkills();
+}
+
+function changeGradient() {
+  var gradientArray = [
+    '135deg, black 0%, #0d49c4 100%',
+    '135deg, black 0%, #29d3c1 100%',
+    '135deg, black 0%, #d1d329 100%',
+  ];
+  return function(count) {
+    TweenMax.to('.section.introduction', 0.4, {
+      background: 'linear-gradient(' + gradientArray[count] + ')',
+    });
+  };
 }
 
 var tlScramble = new TimelineMax();
@@ -126,6 +195,7 @@ function scrambleText() {
     scrambleText: words[count],
     onStart: function() {},
     onComplete: function() {
+      // changeGradient()(count);
       count++;
       scrambleText();
     },
@@ -162,7 +232,7 @@ function drawSkills() {
     abilityBarContainer.append(abilityBar);
     $('.skill-wrapper--inner').append(abilityContainer);
     var barWidth = abilityBarContainer.width();
-    console.log(barWidth);
+
     TweenMax.to(abilityBar, 1, {
       width: skills[skill]['ability'] + '%',
       background:
@@ -181,8 +251,13 @@ drawSkills();
 
 /* enf of drawSkills function */
 
+$(this).scrollTop(0);
+
 $(function() {
   var tl = new TimelineMax();
+  $(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+  });
   tl.fromTo(
     '.preloader p',
     0.5,
@@ -211,3 +286,18 @@ $(function() {
 //   el: document.querySelector('#js-scroll'),
 //   smooth: true,
 // });
+
+/**
+ *
+ * @function handleFirstTab - add focus ring back for users using tab
+ */
+
+function handleFirstTab(e) {
+  if (e.keyCode === 9) {
+    // the "I am a keyboard user" key
+    document.body.classList.add('user-is-tabbing');
+    window.removeEventListener('keydown', handleFirstTab);
+  }
+}
+
+window.addEventListener('keydown', handleFirstTab);

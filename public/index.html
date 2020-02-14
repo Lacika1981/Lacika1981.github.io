@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="dest/css/index.css" />
     <title>Document</title>
   </head>
-  <body id='js-scroll'>
+  <body>
     <header class="header flex">
       <div class="header--left">
         <p class="name">
@@ -24,30 +27,42 @@
     </header>
     <nav class="nav flex flex-center full-screen-wh">
       <ul class="flex">
-        <li>Home</li>
-        <li>Skills</li>
-        <li>Employment</li>
+        <li>
+          <button data-toScroll="introduction">
+            Home
+          </button>
+        </li>
+        <li><button data-toScroll="skill">Skills</button></li>
+        <li>
+          <button data-toScroll="history">Employment</button>
+        </li>
       </ul>
     </nav>
     <section class="wrapper" data-scroll>
-      <section class="section introduction flex flex-center">
+      <section id="introduction" class="section introduction flex flex-center">
         <div class="introduction float"></div>
         <div class="introduction scramble">
           <p></p>
         </div>
+        <div class="end-of-intro">
+          <h2>Learn more</h2>
+          <div class="scroll-container">
+            Scroll Down
+          </div>
+        </div>
       </section>
-      <section class="section skill">
+      <section id="skill" class="section skill">
         <div class="skill-wrapper">
           <h2 class="white">Skills</h2>
           <div class="skill-wrapper--inner flex"></div>
         </div>
       </section>
-      <section class="section history">
+      <section id="history" class="section history">
         <section class="section sub-section">
           <h2>Work history</h2>
           <div class="work-container flex">
             <h3 class="title black">
-              Company - <span class="company-name">bmore group<span>
+              Company - <span class="company-name">bmore group</span>
             </h3>
             <p class="work-position">Front End Developer</p>
             <p class="date-range">
@@ -57,20 +72,25 @@
         </section>
         <section class="section sub-section">
           <h2>Education</h2>
-            <div class="education-container flex">
+          <div class="education-container flex">
             <h3 class="title black">
-              <span class="sub-title">Frontendmaster<span>
+              <span class="sub-title">Frontendmaster</span>
             </h3>
-            <p>Learnt CSS, JavaScript in deep then learnt about Algorithms, data stuctures and ReactJS</p>
-              <p class="date-range">
-                April 2019 - December 2019
-              </p>
+            <p>
+              Learnt CSS, JavaScript in deep then learnt about Algorithms, data
+              stuctures and ReactJS
+            </p>
+            <p class="date-range">
+              April 2019 - December 2019
+            </p>
           </div>
           <div class="education-container flex">
             <h3 class="title black">
-              <span class="sub-title">Udacity<span>
+              <span class="sub-title">Udacity</span>
             </h3>
-            <a href="https://confirm.udacity.com/SEQJKCUS">Front-End Web Developer Nanodegree</a>
+            <a href="https://confirm.udacity.com/SEQJKCUS"
+              >Front-End Web Developer Nanodegree</a
+            >
             <p class="date-range">
               April 2017 - August 2017
             </p>
@@ -79,35 +99,51 @@
       </section>
       <section class="portfolio flex">
         <div class="portfolio-container flex flex-align-center">
-          <p class="portfolio--title">Arcade game - <span class="prep">July 2017 Udacity</span></p>
+          <p class="portfolio--title">
+            Arcade game - <span class="prep">July 2017 Udacity</span>
+          </p>
           <p class="portfolio-description">Clone of original Frogger game</p>
           <div class="image-container arcade">
-            <img src="./Assets/images/src/arcade-game.png" alt="arcade game">
-          </div class="image-container">
+            <img src="./Assets/images/src/arcade-game.png" alt="arcade game" />
+          </div>
           <a href="./apps/arcade-game/index.html">Have a look</a>
         </div>
         <div class="portfolio-container flex flex-align-center">
-          <p class="portfolio--title">Memory game - <span class="prep">December 2017 Udacity</span></p>
+          <p class="portfolio--title">
+            Memory game - <span class="prep">December 2017 Udacity</span>
+          </p>
           <p class="portfolio-description">Test your memory</p>
           <div class="image-container memory">
-            <img src="./Assets/images/src/memory-game.png" alt="memory game">
+            <img src="./Assets/images/src/memory-game.png" alt="memory game" />
           </div>
           <a href="./apps/memory-game/index.html">Have a look</a>
         </div>
         <div class="portfolio-container flex flex-align-center">
-          <p class="portfolio--title">Movie search - <span class="prep">November 2019 Udacity</span></p>
-          <p class="portfolio-description">Search for movies - React, Reach router, Hooks</p>
+          <p class="portfolio--title">
+            Movie search - <span class="prep">November 2019 Udacity</span>
+          </p>
+          <p class="portfolio-description">
+            Search for movies - React, Reach router, Hooks
+          </p>
           <div class="image-container movie">
-            <img src="./Assets/images/src/movie-search.png" alt="movie search">
-          </div class="image-container">
+            <img
+              src="./Assets/images/src/movie-search.png"
+              alt="movie search"
+            />
+          </div>
           <a href="./apps/movie-search/index.html">Have a look</a>
         </div>
         <div class="portfolio-container flex flex-align-center">
-          <p class="portfolio--title">ToDo App - <span class="prep">June 2019 Udacity</span></p>
-          <p class="portfolio-description">Ready for shopping? Using localStorage to store data even window closed</p>
+          <p class="portfolio--title">
+            ToDo App - <span class="prep">June 2019 Udacity</span>
+          </p>
+          <p class="portfolio-description">
+            Ready for shopping? Using localStorage to store data even window
+            closed
+          </p>
           <div class="image-container todo">
-            <img src="./Assets/images/src/todo-list.png" alt="todo list">
-          </div class="image-container">
+            <img src="./Assets/images/src/todo-list.png" alt="todo list" />
+          </div>
           <a href="./apps/todo-app/index.html">Have a look</a>
         </div>
       </section>
@@ -116,12 +152,15 @@
       <p>Loading...</p>
     </section>
     <footer class="footer section wrapper flex">
-      <a href="mailto:vargalaszlo1981@gmail.com">Email: vargalaszlo1981@gmail.com</a>
+      <a href="mailto:vargalaszlo1981@gmail.com"
+        >Email: vargalaszlo1981@gmail.com</a
+      >
       <a href="tel:07758398912">Tel: 07758398912</a>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="src/js/ScrambleTextPlugin.min.js"></script>
     <script src="src/js/SplitText.js"></script>
+    <script src="src/js/ScrollToPlugin.min.js"></script>
     <script src="src/js/jQuery.js"></script>
     <!-- <script src="src/js/locomotive-scroll.js"></script> -->
     <script src="src/js/skills.js"></script>
