@@ -213,6 +213,22 @@ function scrambleText() {
 
 /* end of scrambleText functions */
 
+function drawCircle(elem, ability) {
+  console.log(elem);
+  TweenMax.fromTo(
+    $(elem).find('ellipse'),
+    10,
+    {
+      drawSVG: '0%',
+    },
+    {
+      drawSVG: ability + '%',
+    }
+  );
+}
+
+// drawCircle();
+
 /**
  * @function drawSkills
  */
@@ -226,13 +242,21 @@ function drawSkills() {
     var abilityBarContainer = $('<div />', {
       class: 'ability-bar-container flex flex-justify-left flex-align-center',
     });
+    var svgContainer = $('<svg width="100" height="100"/>');
+    var ellipse = $(
+      '<svg width="100" height="100"><ellipse cx="50" cy="50" rx="46" ry="46" /></svg>'
+    );
+    // svgContainer.append(ellipse);
     var abilityBar = $('<span />', { class: 'ability-bar' });
     title.text(skills[skill]['title']);
+    abilityContainer.append(ellipse);
     abilityContainer.append(title);
     abilityContainer.append(abilityBarContainer);
     abilityBarContainer.append(abilityBar);
     $('.skill-wrapper--inner').append(abilityContainer);
     var barWidth = abilityBarContainer.width();
+
+    drawCircle(ellipse[0], skills[skill]['ability']);
 
     TweenMax.to(abilityBar, 1, {
       width: skills[skill]['ability'] + '%',
