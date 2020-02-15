@@ -250,6 +250,7 @@ function drawSkills() {
     var title = $('<h3 />', { class: 'title white' });
     var abilityContainer = $('<div />', {
       class: 'ability-container flex',
+      'data-title': skills[skill]['title'],
     });
     var abilityBarContainer = $('<div />', {
       class: 'ability-bar-container flex flex-justify-left flex-align-center',
@@ -388,8 +389,23 @@ $(function() {
   });
 });
 
+function changeSiteTitle(elem) {
+  document.title = $(elem).attr('data-title');
+}
+
+function addClickToAbilityContainers() {
+  $('.ability-container').click(function(e) {
+    changeSiteTitle(e.target);
+  });
+}
+
 $('.show-skills').one('click', function(e) {
   drawSkills();
+  addClickToAbilityContainers();
+});
+
+$('#skill').mouseleave(function() {
+  document.title = 'Laszlo Varga - Web Developer';
 });
 
 // var scroll = new LocomotiveScroll({
