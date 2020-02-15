@@ -386,14 +386,16 @@ $(function() {
   });
 });
 
-var scroll = new LocomotiveScroll({
-  el: document.querySelector('#js-scroll'),
-  smooth: true,
-});
+drawSkills();
 
-scroll.on('call', function(instance) {
-  drawSkills();
-});
+// var scroll = new LocomotiveScroll({
+//   el: document.querySelector('#js-scroll'),
+//   smooth: true,
+// });
+
+// scroll.on('call', function(instance) {
+//   drawSkills();
+// });
 
 /**
  *
