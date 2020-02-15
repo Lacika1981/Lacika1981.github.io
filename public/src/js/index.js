@@ -159,6 +159,7 @@ function animateSkills() {
   );
   tl.to('.end-of-intro', 0.5, {
     opacity: 1,
+    delay: 0.15,
   });
 }
 
