@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70.06 70.06">
+  <defs>
+    <style>
+      .cls-1, .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #297a80;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: #fff;
+        stroke-width: 5px;
+      }
+
+      .cls-5 {
+        stroke-linecap: round;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="70.06" height="70.06"/>
+    </clipPath>
+  </defs>
+  <title>close-icon</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g class="cls-2">
+        <path class="cls-3" d="M35,67.56A32.53,32.53,0,1,0,2.5,35,32.52,32.52,0,0,0,35,67.56"/>
+        <path class="cls-4" d="M35,67.56A32.53,32.53,0,1,0,2.5,35,32.52,32.52,0,0,0,35,67.56Z"/>
+      </g>
+      <line class="cls-5" x1="23.88" y1="23.88" x2="46.18" y2="46.18"/>
+      <line class="cls-5" x1="23.88" y1="46.18" x2="46.18" y2="23.88"/>
+    </g>
+  </g>
+</svg>

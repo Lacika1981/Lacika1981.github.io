@@ -66,19 +66,26 @@
       <section id="history" class="section history">
         <section class="section sub-section">
           <h2>Work history</h2>
-          <div class="work-container flex">
+          <div class="work-container flex flex-align-center">
             <h3 class="title black">
-              Company - <span class="company-name">bmore group</span>
+              <span class="sub-title"
+                >Company - <span class="company-name">bmore group</span></span
+              >
             </h3>
             <p class="work-position">Front End Developer</p>
             <p class="date-range">
               January 2018 - February 2020
             </p>
+            <button class="show-map flex flex-center">Show this place</button>
+            <div class="map">
+              <div id="map" class="map-container"></div>
+              <span class="close-icon"></span>
+            </div>
           </div>
         </section>
         <section class="section sub-section">
           <h2>Education</h2>
-          <div class="education-container flex">
+          <div class="education-container flex flex-align-center">
             <h3 class="title black">
               <span class="sub-title">Frontendmaster</span>
             </h3>
@@ -90,7 +97,7 @@
               April 2019 - December 2019
             </p>
           </div>
-          <div class="education-container flex">
+          <div class="education-container flex flex-align-center">
             <h3 class="title black">
               <span class="sub-title">Udacity</span>
             </h3>
@@ -163,6 +170,11 @@
       >
       <a href="tel:07758398912">Tel: 07758398912</a>
     </footer>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2wAq4IseU8bpyUEpRbg77y9sv_jcfTpU&callback=initMap"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="src/js/ScrambleTextPlugin.min.js"></script>
     <script src="src/js/SplitText.js"></script>

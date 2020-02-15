@@ -291,6 +291,68 @@ function drawSkills() {
 
 // drawSkills();
 
+/**
+ * @function showMap - show workplace on click
+ */
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 51.221115, lng: -1.146825 },
+    zoom: 16,
+  });
+}
+
+function animateButton() {
+  var tl = new TimelineMax();
+  var initmap = false;
+
+  function animate(e) {
+    tl.to('.show-map', 0.3, {
+      transform: 'scale(1.3)',
+      ease: Elastic.easeOut.config(1, 0.3),
+    });
+    tl.to('.show-map', 0.3, {
+      transform: 'scale(0)',
+      ease: Elastic.easeOut.config(1, 0.3),
+      onComplete: function() {
+        this.target.display = 'none';
+      },
+    });
+    tl.to('.map', 0.3, {
+      height: '240px',
+    });
+    tl.to('.map-container', 0.3, {
+      transform: 'scale(1)',
+      height: '200px',
+    });
+    tl.to('.map', 0.3, {
+      opacity: 1,
+    });
+  }
+
+  animate();
+  tl.pause();
+
+  return {
+    play: function(e) {
+      tl.play();
+    },
+    reverse: function(e) {
+      console.log('reverse');
+      tl.reverse();
+    },
+  };
+}
+
+var animateBtn = animateButton();
+
+$('.show-map').click(function(e) {
+  animateBtn.play(e);
+});
+$('.close-icon').click(function() {
+  animateBtn.reverse();
+});
+
 /* enf of drawSkills function */
 
 $(this).scrollTop(0);

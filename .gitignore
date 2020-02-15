@@ -2,3 +2,4 @@ node_modules
 public/dest/css/*.css.map
 **/.DS_Store
 .DS_Store
+public/src/js/api-key.js
