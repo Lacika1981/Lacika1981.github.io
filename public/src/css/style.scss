@@ -189,6 +189,7 @@ section:not(.wrapper) {
     }
     .float,
     .scramble {
+      z-index: 9;
       p {
         font-size: 2rem;
         color: #fff;
@@ -411,7 +412,6 @@ h2 {
       background-image: url('../../Assets/images/src/code-hacker.jpg');
       .float,
       .scramble {
-        z-index: 9;
         p {
           font-size: 3rem;
           color: #ddd;
