@@ -73,6 +73,12 @@ img {
   color: #fff;
 }
 
+button {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  flex-basis: auto !important;
+}
+
 header,
 footer,
 section:not(.wrapper) {
@@ -85,7 +91,7 @@ section:not(.wrapper) {
   position: fixed;
   width: 100%;
   justify-content: space-between;
-  z-index: 9;
+  z-index: 99;
   height: 100px;
   background-color: #fff;
   &--right {
@@ -336,7 +342,7 @@ h2 {
   background-color: rgb(60, 160, 135);
   width: auto;
   height: 40px;
-  padding: 10px;
+  padding: 10px !important;
   color: #fff;
   margin: 0 auto;
 }
@@ -483,6 +489,8 @@ h2 {
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .ability-container {
       flex-basis: calc(50% - 20px);
@@ -508,6 +516,23 @@ h2 {
     .date-range {
       padding-right: 0;
     }
+    .map {
+      display: flex;
+      justify-content: center;
+      flex-basis: 100% !important;
+      max-width: 100%;
+      padding-right: 0;
+      &-container {
+        max-width: 400px;
+      }
+      .close-icon {
+        right: calc(50% - 215px);
+      }
+    }
+  }
+  .work-container {
+    flex-basis: 100%;
+    flex-wrap: wrap;
   }
   .portfolio {
     &-container {
@@ -543,5 +568,12 @@ h2 {
         margin-left: 0;
       }
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .t2px {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
