@@ -213,8 +213,10 @@ function scrambleText() {
 
 /* end of scrambleText functions */
 
-function drawCircle(elem, ability) {
-  console.log(elem);
+function drawCircle(elem, ability, counter) {
+  var obj = {
+    value: 0,
+  };
   TweenMax.fromTo(
     $(elem).find('ellipse'),
     10,
@@ -225,6 +227,15 @@ function drawCircle(elem, ability) {
       drawSVG: ability + '%',
     }
   );
+  TweenMax.to(obj, 10, {
+    value: ability,
+    roundProps: {
+      value: 1,
+    },
+    onUpdate: function() {
+      counter[0].innerHTML = obj.value;
+    },
+  });
 }
 
 // drawCircle();
@@ -242,21 +253,26 @@ function drawSkills() {
     var abilityBarContainer = $('<div />', {
       class: 'ability-bar-container flex flex-justify-left flex-align-center',
     });
-    var svgContainer = $('<svg width="100" height="100"/>');
+    var svgContainer = $('<div />', {
+      class: 'svgContainer',
+    });
     var ellipse = $(
       '<svg width="100" height="100"><ellipse cx="50" cy="50" rx="46" ry="46" /></svg>'
     );
-    // svgContainer.append(ellipse);
+    var counter = $('<p>', { class: 'counter' });
+    counter.text(0);
     var abilityBar = $('<span />', { class: 'ability-bar' });
     title.text(skills[skill]['title']);
-    abilityContainer.append(ellipse);
+    svgContainer.append(ellipse);
+    svgContainer.append(counter);
+    abilityContainer.append(svgContainer);
     abilityContainer.append(title);
     abilityContainer.append(abilityBarContainer);
     abilityBarContainer.append(abilityBar);
     $('.skill-wrapper--inner').append(abilityContainer);
     var barWidth = abilityBarContainer.width();
 
-    drawCircle(ellipse[0], skills[skill]['ability']);
+    drawCircle(ellipse[0], skills[skill]['ability'], counter);
 
     TweenMax.to(abilityBar, 1, {
       width: skills[skill]['ability'] + '%',
