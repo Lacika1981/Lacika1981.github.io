@@ -295,12 +295,16 @@ function drawSkills() {
  * @function showMap - show workplace on click
  */
 
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 51.221115, lng: -1.146825 },
-    zoom: 16,
-  });
-}
+function initMap() {}
+
+$(function() {
+  initMap = function() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 51.221115, lng: -1.146825 },
+      zoom: 16,
+    });
+  };
+});
 
 function animateButton() {
   var tl = new TimelineMax();
