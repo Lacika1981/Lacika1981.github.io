@@ -294,17 +294,15 @@ function drawSkills() {
 /**
  * @function showMap - show workplace on click
  */
+var map;
 
-function initMap() {}
-
-$(function() {
-  initMap = function() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: 51.221115, lng: -1.146825 },
-      zoom: 16,
-    });
-  };
-});
+function initMap() {
+  console.log('initMap right');
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 51.221115, lng: -1.146825 },
+    zoom: 16,
+  });
+}
 
 function animateButton() {
   var tl = new TimelineMax();
@@ -390,7 +388,9 @@ $(function() {
   });
 });
 
-drawSkills();
+$('.show-skills').one('click', function(e) {
+  drawSkills();
+});
 
 // var scroll = new LocomotiveScroll({
 //   el: document.querySelector('#js-scroll'),

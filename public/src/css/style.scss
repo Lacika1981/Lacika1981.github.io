@@ -252,7 +252,7 @@ section:not(.wrapper) {
     }
   }
   &.skill {
-    min-height: 100vh;
+    height: auto;
     background-color: #000;
   }
   &.history {
@@ -331,19 +331,22 @@ h2 {
   }
 }
 
+.show-skills,
+.show-map {
+  background-color: rgb(60, 160, 135);
+  width: auto;
+  height: 40px;
+  padding: 10px;
+  color: #fff;
+  margin: 0 auto;
+}
+
 .education-container,
 .work-container {
   flex-direction: column;
   p,
   a {
     text-align: center;
-  }
-  .show-map {
-    background-color: rgb(60, 160, 135);
-    width: auto;
-    height: 40px;
-    padding: 10px;
-    color: #fff;
   }
   .map {
     width: 100%;
