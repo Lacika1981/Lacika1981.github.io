@@ -217,7 +217,7 @@ function drawCircle(elem, ability, counter) {
   var obj = {
     value: 0,
   };
-  TweenMax.fromTo(
+  var ellipseMax = TweenMax.fromTo(
     $(elem).find('ellipse'),
     10,
     {
@@ -227,7 +227,8 @@ function drawCircle(elem, ability, counter) {
       drawSVG: ability + '%',
     }
   );
-  TweenMax.to(obj, 10, {
+
+  var counterMax = TweenMax.to(obj, 10, {
     value: ability,
     roundProps: {
       value: 1,
@@ -288,7 +289,7 @@ function drawSkills() {
   });
 }
 
-drawSkills();
+// drawSkills();
 
 /* enf of drawSkills function */
 
@@ -323,10 +324,14 @@ $(function() {
   });
 });
 
-// var scroll = new LocomotiveScroll({
-//   el: document.querySelector('#js-scroll'),
-//   smooth: true,
-// });
+var scroll = new LocomotiveScroll({
+  el: document.querySelector('#js-scroll'),
+  smooth: true,
+});
+
+scroll.on('call', function(instance) {
+  drawSkills();
+});
 
 /**
  *

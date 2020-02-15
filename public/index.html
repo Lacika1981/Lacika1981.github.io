@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="dest/css/index.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body id="js-scroll">
     <header class="header flex">
       <div class="header--left">
         <p class="name">
@@ -51,7 +51,13 @@
           </div>
         </div>
       </section>
-      <section id="skill" class="section skill">
+      <section
+        id="skill"
+        class="section skill"
+        data-scroll
+        data-scroll-call="drawCounters"
+        data-scroll-offset="25%"
+      >
         <div class="skill-wrapper">
           <h2 class="white">Skills</h2>
           <div class="skill-wrapper--inner flex"></div>
@@ -164,7 +170,7 @@
     <script src="src/js/DrawSVGPlugin.min.js"></script>
     <script src="src/js/RoundPropsPlugin.min.js"></script>
     <script src="src/js/jQuery.js"></script>
-    <!-- <script src="src/js/locomotive-scroll.js"></script> -->
+    <script src="src/js/locomotive-scroll.js"></script>
     <script src="src/js/skills.js"></script>
     <script src="src/js/index.js"></script>
   </body>
