@@ -85,7 +85,7 @@ scrollElem.click(function() {
   console.log('called scroll');
   TweenMax.to(window, 1, {
     scrollTo: {
-      y: '#skill',
+      y: '#description',
       offsetY: 100,
     },
   });

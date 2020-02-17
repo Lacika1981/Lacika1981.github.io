@@ -24,9 +24,9 @@
   <body id="js-scroll">
     <header class="header flex">
       <div class="header--left">
-        <p class="name">
+        <h1 class="name">
           Laszlo Varga - Web Developer
-        </p>
+        </h1>
       </div>
       <div class="header--right">
         <div class="header--right header--right_menu-control menu-control flex">
@@ -42,6 +42,8 @@
             Home
           </button>
         </li>
+        <li><button data-toScroll="description">About</button></li>
+        <li></li>
         <li><button data-toScroll="skill">Skills</button></li>
         <li>
           <button data-toScroll="history">Employment</button>
@@ -64,6 +66,153 @@
           </div>
         </div>
       </section>
+      <section id="description" class="section description flex">
+        <section class="section sub-section t2px">
+          <h1 class="white text-center">Laszlo Varga</h1>
+          <p class="white text-center">
+            I am a Front End Web Developer.<br />I have been working on creating
+            websites for 2 years.<br />From small business pages to corporate
+            portals.<br />
+            I am looking for role where I can work with ReactJS and pure JS.
+          </p>
+        </section>
+      </section>
+      <section id="portfolio" class="portfolio flex t2px">
+        <section class="section sub-section t2px">
+          <h2>Portfolio</h2>
+          <div class="portfolio-outer-container">
+            <div class="portfolio-container flex flex-align-center">
+              <div class="image-container movie">
+                <img
+                  src="./Assets/images/src/movie-search.png"
+                  alt="movie search"
+                />
+              </div>
+              <div class="overlay overlay-movie">
+                <h3 class="portfolio--title">
+                  Movie search - <span class="prep">February 2020</span>
+                </h3>
+                <p class="portfolio-description">
+                  Search for movies<br />
+                  Created this app using<br />
+                  <span class="tools"
+                    >ReactJS, Hooks, Router, HTML, SCSS, JS, Gulp</span
+                  >
+                </p>
+                <a class="blue-button" href="./apps/movie-search/"
+                  >Have a look</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-container flex flex-align-center">
+              <div class="image-container todo">
+                <img src="./Assets/images/src/rubraca.jpg" alt="rubraca" />
+              </div>
+              <div class="overlay overlay-movie">
+                <h3 class="portfolio--title">
+                  Rubraca - <span class="prep">2019 bmore group</span>
+                </h3>
+                <p class="portfolio-description">
+                  Rubraca website<br />
+                  Created this app using<br />
+                  <span class="tools">HTML, SCSS, JS, Gulp, PHP</span><br />
+                  Created the whole site
+                </p>
+                <a class="blue-button" href="https://rubraca.co.uk/"
+                  >Have a look</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-container flex flex-align-center">
+              <div class="image-container todo">
+                <img src="./Assets/images/src/todo-list.png" alt="todo list" />
+              </div>
+              <div class="overlay overlay-movie">
+                <h3 class="portfolio--title">
+                  ToDo App - <span class="prep">June 2019</span>
+                </h3>
+                <p class="portfolio-description">
+                  Ready for shopping?<br />
+                  Created this app using<br />
+                  <span class="tools">HTML, SCSS, JS, Gulp, localStorage</span>
+                </p>
+                <a class="blue-button" href="./apps/todo-app/index.html"
+                  >Have a look</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-container flex flex-align-center">
+              <div class="image-container memory">
+                <img
+                  src="./Assets/images/src/hah.jpg"
+                  alt="Healthcare at Home"
+                />
+              </div>
+              <div class="overlay overlay-movie">
+                <h3 class="portfolio--title">
+                  HAH - <span class="prep">2018 bmore group</span>
+                </h3>
+                <p class="portfolio-description">
+                  Healthcare at Home<br />
+                  Created this app using<br />
+                  <span class="tools"> HTML, CSS, JS, PHP </span><br />
+                  I have taken part in this project actively and solely created
+                  the "careers" section.
+                </p>
+                <a class="blue-button" href="./apps/memory-game/index.html"
+                  >Have a look</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-container flex flex-align-center">
+              <div class="image-container memory">
+                <img
+                  src="./Assets/images/src/memory-game.png"
+                  alt="memory game"
+                />
+              </div>
+              <div class="overlay overlay-movie">
+                <h3 class="portfolio--title">
+                  Memory game - <span class="prep">December 2017 Udacity</span>
+                </h3>
+                <p class="portfolio-description">
+                  Test your memory<br />
+                  Created this app using<br />
+                  <span class="tools">
+                    HTML, CSS, JS
+                  </span>
+                </p>
+                <a class="blue-button" href="./apps/memory-game/index.html"
+                  >Have a look</a
+                >
+              </div>
+            </div>
+            <div class="portfolio-container flex flex-align-center">
+              <div class="image-container arcade">
+                <img
+                  src="./Assets/images/src/arcade-game.png"
+                  alt="arcade game"
+                />
+              </div>
+              <div class="overlay overlay-movie">
+                <h3 class="portfolio--title">
+                  Arcade game - <span class="prep">July 2017 Udacity</span>
+                </h3>
+                <p class="portfolio-description">
+                  Clone of original Frogger game<br />
+                  Created this app using<br />
+                  <span class="tools">
+                    HTML, CSS, JS
+                  </span>
+                </p>
+                <a class="blue-button" href="./apps/arcade-game/index.html"
+                  >Have a look</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
       <section
         id="skill"
         class="section skill"
@@ -79,8 +228,8 @@
           <div class="skill-wrapper--inner flex"></div>
         </div>
       </section>
-      <section id="history" class="section history">
-        <section class="section sub-section t2px">
+      <section id="history" class="section history t2px">
+        <section class="section sub-section">
           <h2>Work history</h2>
           <div class="work-container flex flex-align-center">
             <h3 class="title black">
@@ -101,7 +250,7 @@
             </div>
           </div>
         </section>
-        <section class="section sub-section t2px">
+        <section class="section sub-section">
           <h2>Education</h2>
           <div class="education-container flex flex-align-center">
             <h3 class="title black">
@@ -125,71 +274,6 @@
             <p class="date-range">
               April 2017 - August 2017
             </p>
-          </div>
-        </section>
-      </section>
-      <section id="portfolio" class="portfolio flex t2px">
-        <section class="section sub-section t2px">
-          <h2>Portfolio</h2>
-          <div class="portfolio-container flex flex-align-center">
-            <p class="portfolio--title">
-              Movie search - <span class="prep">February 2020</span>
-            </p>
-            <p class="portfolio-description">
-              Search for movies - React, Reach router, Hooks
-            </p>
-            <div class="image-container movie">
-              <img
-                src="./Assets/images/src/movie-search.png"
-                alt="movie search"
-              />
-            </div>
-            <a class="blue-button" href="./apps/movie-search/">Have a look</a>
-          </div>
-          <div class="portfolio-container flex flex-align-center">
-            <p class="portfolio--title">
-              ToDo App - <span class="prep">June 2019</span>
-            </p>
-            <p class="portfolio-description">
-              Ready for shopping? Using localStorage to store data even window
-              closed
-            </p>
-            <div class="image-container todo">
-              <img src="./Assets/images/src/todo-list.png" alt="todo list" />
-            </div>
-            <a class="blue-button" href="./apps/todo-app/index.html"
-              >Have a look</a
-            >
-          </div>
-          <div class="portfolio-container flex flex-align-center">
-            <p class="portfolio--title">
-              Memory game - <span class="prep">December 2017 Udacity</span>
-            </p>
-            <p class="portfolio-description">Test your memory</p>
-            <div class="image-container memory">
-              <img
-                src="./Assets/images/src/memory-game.png"
-                alt="memory game"
-              />
-            </div>
-            <a class="blue-button" href="./apps/memory-game/index.html"
-              >Have a look</a
-            >
-          </div>
-          <div class="portfolio-container flex flex-align-center">
-            <p class="portfolio--title">
-              Arcade game - <span class="prep">July 2017 Udacity</span>
-            </p>
-            <p class="portfolio-description">Clone of original Frogger game</p>
-            <div class="image-container arcade">
-              <img
-                src="./Assets/images/src/arcade-game.png"
-                alt="arcade game"
-              />
-            </div>
-            <a class="blue-button" href="./apps/arcade-game/index.html"
-              >Have a look</a
-            >
           </div>
         </section>
       </section>
