@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/public/apps/movie-search/static/css/main.e68028f7.chunk.css",
+    "main.css": "/public/apps/movie-search/static/css/main.ccf474ac.chunk.css",
     "main.js": "/public/apps/movie-search/static/js/main.4562ba33.chunk.js",
     "main.js.map": "/public/apps/movie-search/static/js/main.4562ba33.chunk.js.map",
     "runtime-main.js": "/public/apps/movie-search/static/js/runtime-main.956f55f1.js",
@@ -9,17 +9,17 @@
     "static/js/2.ec9c4fcc.chunk.js": "/public/apps/movie-search/static/js/2.ec9c4fcc.chunk.js",
     "static/js/2.ec9c4fcc.chunk.js.map": "/public/apps/movie-search/static/js/2.ec9c4fcc.chunk.js.map",
     "index.html": "/public/apps/movie-search/index.html",
-    "precache-manifest.02e197ca152eceb5263cc37e8ce8e227.js": "/public/apps/movie-search/precache-manifest.02e197ca152eceb5263cc37e8ce8e227.js",
+    "precache-manifest.8cda29e1da7249b1efd370493341837a.js": "/public/apps/movie-search/precache-manifest.8cda29e1da7249b1efd370493341837a.js",
     "service-worker.js": "/public/apps/movie-search/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/public/apps/movie-search/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.e68028f7.chunk.css.map": "/public/apps/movie-search/static/css/main.e68028f7.chunk.css.map",
+    "static/css/main.ccf474ac.chunk.css.map": "/public/apps/movie-search/static/css/main.ccf474ac.chunk.css.map",
     "static/js/2.ec9c4fcc.chunk.js.LICENSE.txt": "/public/apps/movie-search/static/js/2.ec9c4fcc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.956f55f1.js",
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.ec9c4fcc.chunk.js",
-    "static/css/main.e68028f7.chunk.css",
+    "static/css/main.ccf474ac.chunk.css",
     "static/js/main.4562ba33.chunk.js"
   ]
 }
