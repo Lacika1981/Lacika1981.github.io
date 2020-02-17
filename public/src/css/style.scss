@@ -341,8 +341,7 @@ h2 {
   }
 }
 
-.show-skills,
-.show-map {
+.blue-button {
   background-color: rgb(60, 160, 135);
   width: auto;
   height: 40px;
@@ -399,6 +398,7 @@ h2 {
     position: relative;
     margin: auto;
     overflow: hidden;
+    margin-bottom: 15px;
     &::before {
       content: '';
       color: #fff;
@@ -505,7 +505,8 @@ h2 {
     }
   }
   .education-container,
-  .work-container {
+  .work-container,
+  .portfolio-container {
     margin-top: 30px;
     flex-direction: row;
     justify-content: space-between;
@@ -541,6 +542,7 @@ h2 {
   .portfolio {
     &-container {
       flex-basis: calc(50% - 20px);
+      flex-direction: column;
     }
   }
   .footer {
