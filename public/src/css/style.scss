@@ -131,9 +131,6 @@ section:not(.wrapper) {
     flex-direction: column;
     align-items: center;
   }
-  li:not(:last-of-type) {
-    margin-bottom: 15px;
-  }
   button {
     position: relative;
     font-size: 2rem;
@@ -503,9 +500,15 @@ h2 {
   a {
     display: inline-block;
     color: #fff;
+    text-align: center;
+    margin: 10px 0;
     &:not(:last-of-type) {
       margin-bottom: 10px;
     }
+  }
+  .social-logo {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -590,8 +593,6 @@ h2 {
     }
   }
   .footer {
-    justify-content: space-between;
-    flex-direction: row;
     a:first-of-type {
       margin-bottom: 0;
     }
