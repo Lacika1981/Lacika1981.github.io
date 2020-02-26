@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader h1 {
+  font-size: 10vw;
+}
